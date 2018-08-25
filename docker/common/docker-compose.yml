@@ -1,0 +1,6 @@
+version: '2'
+services:
+  license-service:
+      image: thuannguyenit/simpleex-license-service:smia-1st-spring-boot
+      ports:
+        - "8080:8080"
