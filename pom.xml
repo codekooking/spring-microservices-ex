@@ -1,66 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.codekooking</groupId>
-  <version>0.0.1-SNAPSHOT</version>
-  <artifactId>simpleex-parent-pom</artifactId>
-  <packaging>pom</packaging>
+    <groupId>com.codekooking</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>simpleex-parent-pom</artifactId>
+    <packaging>pom</packaging>
 
-  <name>smia-parent-pom</name>
-  <description>Parent Pom for the Simple Exchange Project</description>
+    <name>smia-parent-pom</name>
+    <description>Parent Pom for the Simple Exchange Project</description>
 
-  <licenses>
-    <license>
-      <name>Apache License, Version 2.0</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-      <comments>A business-friendly OSS license</comments>
-    </license>
-  </licenses>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
 
-  <organization>
-    <name>Code Kooking</name>
-    <url>http://codekooking.com</url>
-  </organization>
+    <organization>
+        <name>Code Kooking</name>
+        <url>http://codekooking.com</url>
+    </organization>
 
-  <developers>
-    <developer>
-      <id>thuannguyenit</id>
-      <name>Thuan Nguyen</name>
-      <email>thuannguyenit@gmail.com</email>
-      <url>https://github.com/thuannguyenit</url>
-      <organization>Code Kooking</organization>
-      <organizationUrl>https://github.com/codekooking</organizationUrl>
-      <roles>
-        <role>architect</role>
-        <role>developer</role>
-      </roles>
-      <timezone>Asia/Ho_Chi_Minh</timezone>
-    </developer>
-  </developers>
+    <developers>
+        <developer>
+            <id>thuannguyenit</id>
+            <name>Thuan Nguyen</name>
+            <email>thuannguyenit@gmail.com</email>
+            <url>https://github.com/thuannguyenit</url>
+            <organization>Code Kooking</organization>
+            <organizationUrl>https://github.com/codekooking</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>devops</role>
+                <role>developer</role>
+            </roles>
+            <timezone>Asia/Ho_Chi_Minh</timezone>
+        </developer>
+    </developers>
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.4.RELEASE</version>
-  </parent>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.4.RELEASE</version>
+    </parent>
 
-  <modules>
-    <module>license-service</module>
-  </modules>
+    <modules>
+        <module>config-server</module>
+        <module>license-service</module>
+    </modules>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>com.spotify</groupId>
-        <artifactId>docker-maven-plugin</artifactId>
-        <version>1.1.1</version>
-        <configuration>
-        <baseImage>java</baseImage>
-        <imageName>example</imageName>
-      </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.1.1</version>
+                <configuration>
+                    <baseImage>java</baseImage>
+                    <imageName>example</imageName>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

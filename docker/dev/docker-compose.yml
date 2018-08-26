@@ -1,0 +1,20 @@
+version: '2'
+services:
+  config-server:
+    extends:
+      file: ../common/docker-compose.yml
+      service: config-server
+  license-service:
+    extends:
+      file: ../common/docker-compose.yml
+      service: license-service
+    environment:
+      PROFILE: "dev"
+  database:
+      extends:
+        file: ../common/docker-compose.yml
+        service: database
+      environment:
+        POSTGRES_USER: "postgres_dev"
+        POSTGRES_PASSWORD: "p0stgr@s_dev"
+        POSTGRES_DB: "simple_exchange_dev"
