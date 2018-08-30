@@ -1,19 +1,28 @@
 version: '2'
 services:
+  discovery-server:
+    image: thuannguyenit/simpleex-discovery-server:smia-03
+    ports:
+      - "8761:8761"
   config-server:
-    image: thuannguyenit/simpleex-config-server:smia-02
+    image: thuannguyenit/simpleex-config-server:smia-03
     ports:
       - "8888:8888"
     environment:
-      ENCRYPT_KEY: "IMSYMMETRIC"
+      DISCOVERYSERVER_URI: "http://discovery-server:8761/eureka/"
+      DISCOVERYSERVER_PORT: "8761"
+      ENCRYPT_KEY:  "IMSYMMETRIC"
   license-service:
-    image: thuannguyenit/simpleex-license-service:smia-02
+    image: thuannguyenit/simpleex-license-service:smia-03
     ports:
       - "8080:8080"
     environment:
+      SERVER_PORT: "8080"
       PROFILE: "default"
       CONFIGSERVER_URI: "http://config-server:8888"
       CONFIGSERVER_PORT: "8888"
+      DISCOVERYSERVER_URI: "http://discovery-server:8761/eureka/"
+      DISCOVERYSERVER_PORT: "8761"
       DATABASESERVER_PORT: "5432"
       ENCRYPT_KEY: "IMSYMMETRIC"
   database:
