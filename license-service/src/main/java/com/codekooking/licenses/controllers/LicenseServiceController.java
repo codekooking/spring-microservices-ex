@@ -24,8 +24,8 @@ public class LicenseServiceController {
     private ServiceConfig serviceConfig;
 
     /*
-    * Get License list by Organization ID
-    * */
+     * Get License list by Organization ID
+     * */
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<License> getLicenses(@PathVariable("organizationId") String organizationId) {
         return licenseService.getLicensesByOrg(organizationId);
@@ -41,8 +41,8 @@ public class LicenseServiceController {
     }
 
     /*
-    * Create License
-    * */
+     * Create License
+     * */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public void saveLicenses(@RequestBody License license) {
         licenseService.saveLicense(license);
