@@ -29,4 +29,5 @@ echo "********************************************************"
 java -Djava.security.egd=file:/dev/./urandom -Dserver.port=$SERVER_PORT   \
      -Deureka.client.serviceUrl.defaultZone=$DISCOVERYSERVER_URI             \
      -Dspring.cloud.config.uri=$CONFIGSERVER_URI                          \
-     -Dspring.profiles.active=$PROFILE -jar /usr/local/license-service/@project.build.finalName@.jar
+     -Dspring.profiles.active=$PROFILE                                   \
+     -jar /usr/local/organization-service/@project.build.finalName@.jar
