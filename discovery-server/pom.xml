@@ -44,7 +44,7 @@
         <start-class>com.codekooking.discovery.DiscoveryServerApplication</start-class>
         <java.version>1.8</java.version>
         <docker.image.name>thuannguyenit/simpleex-discovery-server</docker.image.name>
-        <docker.image.tag>smia-03</docker.image.tag>
+        <docker.image.tag>smia-04</docker.image.tag>
     </properties>
 
     <build>
