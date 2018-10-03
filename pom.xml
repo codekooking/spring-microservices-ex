@@ -53,6 +53,7 @@
         <module>discovery-server</module>
         <module>license-service</module>
         <module>organization-service</module>
+        <module>gateway-server</module>
     </modules>
 
     <build>

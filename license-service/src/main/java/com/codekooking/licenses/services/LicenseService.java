@@ -7,8 +7,6 @@ import java.util.UUID;
 
 import com.codekooking.licenses.model.Organization;
 import com.codekooking.licenses.utils.UserContextHolder;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,26 +43,6 @@ public class LicenseService {
                 .withComment(config.getCustomProperty());
     }
 
-    @HystrixCommand
-    private Organization getOrganization(String organizationId) {
-        return organizationRestClient.getOrganization(organizationId);
-    }
-
-    @HystrixCommand(
-            fallbackMethod = "buildFallbackLicenseList",
-            threadPoolKey = "licenseByOrgThreadPool",
-            threadPoolProperties = {
-                    @HystrixProperty(name = "coreSize", value = "30"),
-                    @HystrixProperty(name = "maxQueueSize", value = "10")
-            },
-            commandProperties = {
-                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
-                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "75"),
-                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "7000"),
-                    @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "15000"),
-                    @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "5")
-            }
-    )
     public List<License> getLicensesByOrg(String organizationId) {
         logger.debug("LicenseService.getLicensesByOrg  Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
         randomlyRunLong();
@@ -94,6 +72,10 @@ public class LicenseService {
 
         fallbackList.add(license);
         return fallbackList;
+    }
+
+    private Organization getOrganization(String organizationId) {
+        return organizationRestClient.getOrganization(organizationId);
     }
 
     private void randomlyRunLong() {
