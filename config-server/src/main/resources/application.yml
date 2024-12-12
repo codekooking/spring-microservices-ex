@@ -1,0 +1,19 @@
+#
+#   This is the core configuration for a configuration service. GIT-BASED repository shall be used:
+#
+
+####################################
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+      server:
+        encrypt.enabled: false
+        git:
+          uri: https://github.com/codekooking/spring-microservies-ex-config
+          searchPaths: license-service, organization-service
+          username: user
+          password: passw0rd

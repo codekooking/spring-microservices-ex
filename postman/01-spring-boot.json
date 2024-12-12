@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "4deda20e-0765-4536-bd58-d54ea53293e8",
+		"name": "Simple Exchange Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "License Service",
+			"item": [
+				{
+					"name": "Get Licenses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{END_POINT}}/{{API_VERSION}}/organizations/{{ORGANIZATION_ID}}/licenses/{{$timestamp}}",
+							"host": [
+								"{{END_POINT}}"
+							],
+							"path": [
+								"{{API_VERSION}}",
+								"organizations",
+								"{{ORGANIZATION_ID}}",
+								"licenses",
+								"{{$timestamp}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create License",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{END_POINT}}/{{API_VERSION}}/organizations/{{ORGANIZATION_ID}}/licenses/{{$timestamp}}",
+							"host": [
+								"{{END_POINT}}"
+							],
+							"path": [
+								"{{API_VERSION}}",
+								"organizations",
+								"{{ORGANIZATION_ID}}",
+								"licenses",
+								"{{$timestamp}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update License",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{END_POINT}}/{{API_VERSION}}/organizations/{{ORGANIZATION_ID}}/licenses/{{$timestamp}}",
+							"host": [
+								"{{END_POINT}}"
+							],
+							"path": [
+								"{{API_VERSION}}",
+								"organizations",
+								"{{ORGANIZATION_ID}}",
+								"licenses",
+								"{{$timestamp}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete License",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{END_POINT}}/{{API_VERSION}}/organizations/{{ORGANIZATION_ID}}/licenses/{{$timestamp}}",
+							"host": [
+								"{{END_POINT}}"
+							],
+							"path": [
+								"{{API_VERSION}}",
+								"organizations",
+								"{{ORGANIZATION_ID}}",
+								"licenses",
+								"{{$timestamp}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
